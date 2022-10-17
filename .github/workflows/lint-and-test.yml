@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   golangci:
-    if: github.repository == 'twmb/franz-go'
+    # if: github.repository == 'twmb/franz-go'
     runs-on: ubuntu-latest
     name: "golangci-lint on amd64"
     steps:
@@ -58,7 +58,7 @@ jobs:
             staticcheck -checks 'all,-ST1003,-SA1012,-ST1016,-SA1019,-SA2001' ./... # actually contains atomicalign check
 
   integration-test:
-    if: github.repository == 'twmb/franz-go'
+    # if: github.repository == 'twmb/franz-go'
     needs: golangci
     runs-on: ubuntu-latest
     name: "integration test kafka"
